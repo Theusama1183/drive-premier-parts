@@ -147,24 +147,23 @@ function Index() {
             : "bg-zinc-950 border-zinc-900/0"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-10">
-            <a href="/" className="text-zinc-100 font-semibold tracking-tighter text-xl flex items-center gap-2">
-              <span className="size-2 bg-brand rounded-full" />
-              RADIATOR<span className="text-brand">.COM</span>
+            <a href="/" aria-label="Radiator.com home" className="flex items-center">
+              <img src={logoWhite} alt="Radiator.com" className="h-9 w-auto" />
             </a>
             <div className="hidden md:flex gap-8">
-              <a href="#shop" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">SHOP</a>
-              <a href="#locator" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">FIND A STORE</a>
-              <a href="#" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">DEALER PORTAL</a>
-              <a href="#" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">SUPPORT</a>
+              <a href="/shop" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">SHOP</a>
+              <a href="/location-search" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">FIND A STORE</a>
+              <a href="http://blog.radiator.com" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">BLOG</a>
+              <a href="/ContactUs" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">CONTACT</a>
             </div>
           </div>
           <div className="flex items-center gap-4 md:gap-6">
-            <a href="tel:18004064738" className="hidden sm:block text-sm font-medium text-zinc-100 hover:text-brand transition-colors">
+            <a href="tel:18004064738" className="hidden sm:block text-sm font-semibold text-zinc-100 hover:text-brand transition-colors">
               1-800-406-4738
             </a>
-            <button className="px-4 py-2 bg-brand text-zinc-950 text-sm font-semibold rounded-sm ring-1 ring-brand hover:bg-white hover:ring-white transition-colors">
+            <button className="px-4 py-2 bg-brand text-white text-sm font-semibold rounded-sm ring-1 ring-brand hover:bg-white hover:text-zinc-950 hover:ring-white transition-colors">
               CART (0)
             </button>
           </div>
