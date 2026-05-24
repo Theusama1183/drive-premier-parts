@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logoWhite from "@/assets/logo-white.png";
 import heroRadiator from "@/assets/hero-radiator.jpg";
 import hubMap from "@/assets/hub-map.jpg";
 import catRadiators from "@/assets/cat-radiators.jpg";
