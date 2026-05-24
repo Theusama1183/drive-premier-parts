@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logoWhite from "@/assets/logo-white.png";
 import heroRadiator from "@/assets/hero-radiator.jpg";
 import hubMap from "@/assets/hub-map.jpg";
 import catRadiators from "@/assets/cat-radiators.jpg";
@@ -55,7 +56,23 @@ const advantages = [
   },
 ];
 
-const partners = ["PBI", "CRYOMAX", "KOYORAD", "CSF", "CRS", "DELPHI", "APDI", "NISSENS", "RADCOOL"];
+const partners = [
+  "Pacific Best Inc",
+  "Behr / Hella",
+  "Cryomax",
+  "Koyo",
+  "CSF Cooling",
+  "CRS Cooling",
+  "Lynol Cooling",
+  "RadCool",
+  "Delphi Automotive",
+  "APDI",
+  "Nissens",
+];
+
+const makes = [
+  "Acura","Alfa Romeo","AM General","American Motors","Asuna","Audi","BMW","Buick","Cadillac","Chevrolet","Chrysler","Daewoo","Daihatsu","Datsun","Dodge","Eagle","Excalibur","Fiat","Ford","Freightliner","Geo","GMC","Honda","Hummer","Hyundai","Infiniti","International","Isuzu","Jaguar","Jeep","Kia","Land Rover","Lexus","Lincoln","Mazda","Mercedes","Mercury","Merkur","MG","Mini","Mitsubishi","Nissan","Oldsmobile","Peugeot","Plymouth","Pontiac","Porsche","Renault","Rolls Royce","Saab","Saturn","Scion","Smart Car","SRT","Sterling","Subaru","Suzuki","Toyota","Volkswagen","Volvo","Yugo",
+];
 
 const industries = [
   { name: "Automotive", code: "01" },
@@ -68,25 +85,36 @@ const industries = [
 
 const testimonials = [
   {
-    quote:
-      "Radiator.com stands by its lifetime warranty. We've sourced cooling parts from them for nine years across our 14-bay shop and the consistency is unreal.",
-    author: "Denis P.",
-    role: "Shop Owner — Austin, TX",
-    rating: 5,
+    quote: "1-800 Radiator is the only place we get cooling assemblies, radiators, AC condensers, & fan assemblies. AMAZING customer service, spot on shipping, and NEVER the wrong part. 100% recommend them for your cooling needs.",
+    author: "Bryan M.", role: "Verified Customer", rating: 5,
   },
   {
-    quote:
-      "Same-day pickup actually means same-day. Our parts manager calls in the morning and the unit is on our counter by lunch. Game changer for fleet work.",
-    author: "Marcus L.",
-    role: "Fleet Supervisor — Phoenix, AZ",
-    rating: 5,
+    quote: "1-800 Radiator came two hours after I ordered it and the price was better than everyone else who had the part 3 days away.",
+    author: "Anthony M.", role: "Verified Customer", rating: 5,
   },
   {
-    quote:
-      "First-time fit is the real headline. We've stopped second-guessing OE numbers — the catalog data is just right.",
-    author: "Yuki R.",
-    role: "Lead Tech — Seattle, WA",
-    rating: 5,
+    quote: "1-800 Radiator is a good choice. I use them all the time, always a direct fit. Some aftermarket parts from the store only \"almost\" fit.",
+    author: "George H.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Radiator.com stands by its lifetime warranty. Business Week online magazine recently had a write up on a Texas franchise that is doing excellent and expanding.",
+    author: "Denis P.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "YAY for 1-800 Radiator! I called yesterday at 5:45 PM and they promised a brand spankin' new radiator on my doorstep by noon today. They knocked at my door at 11:53 AM with a smile. It was $20 cheaper than AutoZone or PepBoys.",
+    author: "Nicole D.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Good prices; fast, free delivery. The people who answer the phone are knowledgeable and courteous.",
+    author: "David V.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Extremely reliable service with good customer service — highly recommend.",
+    author: "Willem L.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Wow.. called on a Saturday. Had delivery in less than an hour. Forget the parts stores. Buy from here. Even has a candy surprise.",
+    author: "K K.", role: "Verified Customer", rating: 5,
   },
 ];
 
@@ -119,24 +147,23 @@ function Index() {
             : "bg-zinc-950 border-zinc-900/0"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-10">
-            <a href="/" className="text-zinc-100 font-semibold tracking-tighter text-xl flex items-center gap-2">
-              <span className="size-2 bg-brand rounded-full" />
-              RADIATOR<span className="text-brand">.COM</span>
+            <a href="/" aria-label="Radiator.com home" className="flex items-center">
+              <img src={logoWhite} alt="Radiator.com" className="h-9 w-auto" />
             </a>
             <div className="hidden md:flex gap-8">
-              <a href="#shop" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">SHOP</a>
-              <a href="#locator" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">FIND A STORE</a>
-              <a href="#" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">DEALER PORTAL</a>
-              <a href="#" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors">SUPPORT</a>
+              <a href="/shop" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">SHOP</a>
+              <a href="/location-search" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">FIND A STORE</a>
+              <a href="http://blog.radiator.com" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">BLOG</a>
+              <a href="/ContactUs" className="text-sm font-medium text-zinc-300 hover:text-brand transition-colors">CONTACT</a>
             </div>
           </div>
           <div className="flex items-center gap-4 md:gap-6">
-            <a href="tel:18004064738" className="hidden sm:block text-sm font-medium text-zinc-100 hover:text-brand transition-colors">
+            <a href="tel:18004064738" className="hidden sm:block text-sm font-semibold text-zinc-100 hover:text-brand transition-colors">
               1-800-406-4738
             </a>
-            <button className="px-4 py-2 bg-brand text-zinc-950 text-sm font-semibold rounded-sm ring-1 ring-brand hover:bg-white hover:ring-white transition-colors">
+            <button className="px-4 py-2 bg-brand text-white text-sm font-semibold rounded-sm ring-1 ring-brand hover:bg-white hover:text-zinc-950 hover:ring-white transition-colors">
               CART (0)
             </button>
           </div>
@@ -211,7 +238,7 @@ function Index() {
                     <option>{label}</option>
                   </select>
                 ))}
-                <button className="h-12 bg-brand text-zinc-950 text-sm font-semibold rounded-sm hover:bg-white transition-colors">
+                <button className="h-12 bg-brand text-white text-sm font-semibold rounded-sm hover:brightness-110 transition-all">
                   FIND PARTS →
                 </button>
               </div>
@@ -237,15 +264,15 @@ function Index() {
           </div>
         </section>
 
-        {/* CATEGORY GRID */}
-        <section className="py-32">
+        {/* CATEGORY GRID — LIGHT */}
+        <section className="py-32 bg-white text-zinc-900">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
               <div>
                 <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Inventory</span>
-                <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight">Parts by Category</h2>
+                <h2 className="text-3xl md:text-4xl font-semibold text-zinc-900 tracking-tight">Parts by Category</h2>
               </div>
-              <a href="#" className="text-sm font-medium text-zinc-400 hover:text-brand transition-colors border-b border-zinc-800 pb-1">View full catalog →</a>
+              <a href="/shop" className="text-sm font-medium text-zinc-600 hover:text-brand transition-colors border-b border-zinc-300 pb-1">View full catalog →</a>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {categories.map((c) => (
@@ -254,15 +281,15 @@ function Index() {
                   href="#"
                   className="group block"
                 >
-                  <div className="w-full aspect-square bg-zinc-900 ring-1 ring-white/5 rounded-xl mb-4 overflow-hidden relative">
+                  <div className="w-full aspect-square bg-zinc-100 ring-1 ring-zinc-200 rounded-xl mb-4 overflow-hidden relative">
                     <img src={c.img} alt={c.name} loading="lazy" width={640} height={640} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                      <span className="text-[10px] uppercase tracking-widest text-zinc-400">Shop</span>
-                      <span className="text-brand text-sm opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                      <span className="text-[10px] uppercase tracking-widest text-zinc-100">Shop</span>
+                      <span className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                     </div>
                   </div>
-                  <h3 className="text-sm font-medium text-zinc-200 group-hover:text-brand transition-colors">{c.name}</h3>
+                  <h3 className="text-sm font-semibold text-zinc-900 group-hover:text-brand transition-colors">{c.name}</h3>
                   <p className="text-xs text-zinc-500 mt-1">{c.count}</p>
                 </a>
               ))}
@@ -294,35 +321,35 @@ function Index() {
           </div>
         </section>
 
-        {/* LOCATOR */}
-        <section id="locator" className="py-32">
+        {/* LOCATOR — LIGHT */}
+        <section id="locator" className="py-32 bg-white text-zinc-900">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Local Network</span>
-              <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 mb-6 text-balance tracking-tight">200+ regional hubs supporting your fleet.</h2>
-              <p className="text-zinc-400 text-base max-w-[48ch] mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-6 text-balance tracking-tight">Find a dealer near you.</h2>
+              <p className="text-zinc-600 text-base max-w-[48ch] mb-8">
                 Enter your zip code to find the nearest distribution center. Most locations offer counter pickup and local garage delivery within a 30-mile radius.
               </p>
               <div className="flex gap-2 max-w-md">
                 <input
                   type="text"
                   placeholder="Enter ZIP code"
-                  className="flex-1 h-12 bg-zinc-900 border border-zinc-800 rounded px-4 text-zinc-100 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
+                  className="flex-1 h-12 bg-white border border-zinc-300 rounded px-4 text-zinc-900 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
                 />
-                <button className="px-8 h-12 bg-brand text-zinc-950 text-sm font-semibold rounded hover:bg-white transition-colors">
+                <button className="px-8 h-12 bg-brand text-white text-sm font-semibold rounded hover:brightness-110 transition-all">
                   LOCATE
                 </button>
               </div>
-              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-xs text-zinc-500">
-                <span><span className="text-zinc-300 font-medium">2,800+</span> ASE-certified counter pros</span>
-                <span><span className="text-zinc-300 font-medium">98%</span> orders ship same day</span>
+              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-xs text-zinc-600">
+                <span><span className="text-zinc-900 font-semibold">2,800+</span> ASE-certified counter pros</span>
+                <span><span className="text-zinc-900 font-semibold">98%</span> orders ship same day</span>
               </div>
             </div>
-            <div className="relative w-full aspect-video bg-zinc-900 ring-1 ring-white/5 rounded-xl overflow-hidden">
+            <div className="relative w-full aspect-video bg-zinc-100 ring-1 ring-zinc-200 rounded-xl overflow-hidden">
               <img src={hubMap} alt="US distribution hub network" loading="lazy" width={1280} height={896} className="w-full h-full object-cover" />
-              <div className="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded px-3 py-2">
+              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm border border-zinc-200 rounded px-3 py-2 shadow">
                 <div className="text-[10px] uppercase tracking-widest text-zinc-500">Live Network</div>
-                <div className="text-sm text-zinc-100 font-medium">214 hubs online</div>
+                <div className="text-sm text-zinc-900 font-semibold">214 hubs online</div>
               </div>
             </div>
           </div>
@@ -346,8 +373,8 @@ function Index() {
           </div>
         </section>
 
-        {/* TESTIMONIALS */}
-        <section className="py-32">
+        {/* TESTIMONIALS — LIGHT */}
+        <section className="py-32 bg-zinc-50 text-zinc-900">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">What Our Customers Are Saying</span>
             <div className="relative min-h-[260px]">
@@ -363,9 +390,9 @@ function Index() {
                       <svg key={idx} className="size-4 text-brand fill-brand" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 0 0 .95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 0 0-.364 1.118l1.287 3.957c.3.92-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 0 0-1.176 0l-3.366 2.446c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 0 0-.364-1.118L2.06 9.384c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 0 0 .95-.69l1.287-3.957Z" /></svg>
                     ))}
                   </div>
-                  <p className="text-xl md:text-2xl text-zinc-100 leading-relaxed text-balance">"{t.quote}"</p>
+                  <p className="text-xl md:text-2xl text-zinc-900 leading-relaxed text-balance">"{t.quote}"</p>
                   <div className="mt-8">
-                    <div className="text-zinc-100 font-medium text-sm">{t.author}</div>
+                    <div className="text-zinc-900 font-semibold text-sm">{t.author}</div>
                     <div className="text-zinc-500 text-xs mt-1">{t.role}</div>
                   </div>
                 </div>
@@ -377,24 +404,45 @@ function Index() {
                   key={i}
                   aria-label={`Show testimonial ${i + 1}`}
                   onClick={() => setActiveTestimonial(i)}
-                  className={`h-1.5 rounded-full transition-all ${i === activeTestimonial ? "w-8 bg-brand" : "w-1.5 bg-zinc-700 hover:bg-zinc-600"}`}
+                  className={`h-1.5 rounded-full transition-all ${i === activeTestimonial ? "w-8 bg-brand" : "w-1.5 bg-zinc-300 hover:bg-zinc-400"}`}
                 />
               ))}
             </div>
           </div>
         </section>
 
-        {/* PARTNERS MARQUEE */}
-        <div className="py-12 border-y border-zinc-900 overflow-hidden">
-          <div className="text-center text-[10px] uppercase tracking-[0.3em] text-zinc-600 mb-8">Our Partners</div>
+        {/* PARTNERS MARQUEE — LIGHT */}
+        <div className="py-12 bg-white border-y border-zinc-200 overflow-hidden">
+          <div className="text-center text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-8">Our Partners</div>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partners, ...partners].map((p, i) => (
-              <span key={i} className="text-zinc-600 hover:text-zinc-400 transition-colors font-semibold tracking-widest text-xl px-12">
+              <span key={i} className="text-zinc-400 hover:text-brand transition-colors font-semibold tracking-widest text-xl px-12">
                 {p}
               </span>
             ))}
           </div>
         </div>
+
+        {/* MAKES — LIGHT */}
+        <section className="py-24 bg-zinc-50 text-zinc-900 border-b border-zinc-200">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Shop By Make</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-zinc-900 tracking-tight">We Have Radiators For These Cars</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-3">
+              {makes.map((m) => (
+                <a
+                  key={m}
+                  href={`/radiator/${m.toLowerCase().replace(/\s+/g, "_")}`}
+                  className="text-sm text-zinc-700 hover:text-brand transition-colors py-1.5 border-b border-zinc-200 hover:border-brand"
+                >
+                  {m}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* NEWSLETTER */}
         <section className="py-32">
@@ -405,16 +453,24 @@ function Index() {
                 <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Stay In The Loop</span>
                 <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight mb-3 max-w-[24ch]">Get the right part, the first time.</h2>
                 <p className="text-zinc-400 mb-8 max-w-[48ch]">Promotions, new SKUs, and fitment alerts for the makes you service. No spam — just signal.</p>
-                <form className="flex flex-col sm:flex-row gap-3 max-w-lg" onSubmit={(e) => e.preventDefault()}>
+                <form className="flex flex-col gap-3 max-w-lg" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    aria-label="Full name"
+                    className="h-12 bg-zinc-950 border border-zinc-800 rounded px-4 text-zinc-100 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
+                  />
+                  <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
                     placeholder="your@email.com"
                     aria-label="Email address"
                     className="flex-1 h-12 bg-zinc-950 border border-zinc-800 rounded px-4 text-zinc-100 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
                   />
-                  <button className="h-12 px-8 bg-brand text-zinc-950 text-sm font-semibold rounded hover:bg-white transition-colors">
-                    SUBSCRIBE
+                  <button className="h-12 px-8 bg-brand text-white text-sm font-semibold rounded hover:brightness-110 transition-all">
+                    SIGN UP
                   </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -427,26 +483,27 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
             <div className="col-span-2">
-              <div className="text-zinc-100 font-semibold tracking-tighter text-xl mb-6 flex items-center gap-2">
-                <span className="size-2 bg-brand rounded-full" />
-                RADIATOR<span className="text-brand">.COM</span>
-              </div>
+              <img src={logoWhite} alt="Radiator.com" className="h-10 w-auto mb-6" />
               <p className="text-zinc-500 text-sm max-w-[34ch] mb-6">
                 The leading nationwide source for radiators, A/C parts, and engine cooling — trusted by 150,000 auto shops since 1982.
               </p>
+              <a href="tel:18004064738" className="text-zinc-100 font-semibold text-lg hover:text-brand transition-colors block mb-6">1-800-406-4738</a>
               <div className="flex gap-3">
-                {["TW", "FB", "IG", "YT"].map((s) => (
-                  <a key={s} href="#" className="size-9 bg-zinc-800 hover:bg-brand hover:text-zinc-950 text-zinc-400 rounded flex items-center justify-center text-[10px] font-bold tracking-wider transition-colors">
-                    {s}
+                {[
+                  { l: "TW", href: "https://twitter.com/1_800Radiator" },
+                  { l: "FB", href: "https://www.facebook.com/1800radiator" },
+                ].map((s) => (
+                  <a key={s.l} href={s.href} target="_blank" rel="noreferrer" className="size-9 bg-zinc-800 hover:bg-brand hover:text-white text-zinc-300 rounded flex items-center justify-center text-[10px] font-bold tracking-wider transition-colors">
+                    {s.l}
                   </a>
                 ))}
               </div>
             </div>
             {[
-              { h: "Products", l: ["Radiators", "Condensers", "Cooling Fans", "A/C Kits", "Heaters", "Fuel Tanks"] },
-              { h: "Support", l: ["Track Order", "Warranty Policy", "Returns", "Shipping", "Contact"] },
-              { h: "Company", l: ["Locations", "About Us", "Dealer Portal", "Careers", "Blog"] },
-              { h: "Resources", l: ["Fitment Guide", "Install Videos", "Wholesale", "Industries", "Newsroom"] },
+              { h: "Shop", l: ["Radiators", "Condensers", "Cooling Fans", "A/C Kits", "Heaters", "Fuel Tanks"] },
+              { h: "Support", l: ["Contact Us", "Web Accessibility", "Site Map", "Privacy"] },
+              { h: "Company", l: ["Locations", "Blog", "Driven Brands"] },
+              { h: "Legal", l: ["Privacy", "Do Not Sell My Info", "California Privacy Policy"] },
             ].map((col) => (
               <div key={col.h}>
                 <h5 className="text-zinc-100 text-xs font-bold uppercase tracking-widest mb-6">{col.h}</h5>
