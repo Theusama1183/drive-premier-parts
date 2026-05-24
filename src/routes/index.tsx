@@ -494,7 +494,7 @@ function Index() {
                   { l: "FB", href: "https://www.facebook.com/1800radiator" },
                 ].map((s) => (
                   <a key={s.l} href={s.href} target="_blank" rel="noreferrer" className="size-9 bg-zinc-800 hover:bg-brand hover:text-white text-zinc-300 rounded flex items-center justify-center text-[10px] font-bold tracking-wider transition-colors">
-                    {s}
+                    {s.l}
                   </a>
                 ))}
               </div>
