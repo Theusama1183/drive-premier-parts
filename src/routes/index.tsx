@@ -56,7 +56,23 @@ const advantages = [
   },
 ];
 
-const partners = ["PBI", "CRYOMAX", "KOYORAD", "CSF", "CRS", "DELPHI", "APDI", "NISSENS", "RADCOOL"];
+const partners = [
+  "Pacific Best Inc",
+  "Behr / Hella",
+  "Cryomax",
+  "Koyo",
+  "CSF Cooling",
+  "CRS Cooling",
+  "Lynol Cooling",
+  "RadCool",
+  "Delphi Automotive",
+  "APDI",
+  "Nissens",
+];
+
+const makes = [
+  "Acura","Alfa Romeo","AM General","American Motors","Asuna","Audi","BMW","Buick","Cadillac","Chevrolet","Chrysler","Daewoo","Daihatsu","Datsun","Dodge","Eagle","Excalibur","Fiat","Ford","Freightliner","Geo","GMC","Honda","Hummer","Hyundai","Infiniti","International","Isuzu","Jaguar","Jeep","Kia","Land Rover","Lexus","Lincoln","Mazda","Mercedes","Mercury","Merkur","MG","Mini","Mitsubishi","Nissan","Oldsmobile","Peugeot","Plymouth","Pontiac","Porsche","Renault","Rolls Royce","Saab","Saturn","Scion","Smart Car","SRT","Sterling","Subaru","Suzuki","Toyota","Volkswagen","Volvo","Yugo",
+];
 
 const industries = [
   { name: "Automotive", code: "01" },
@@ -69,25 +85,36 @@ const industries = [
 
 const testimonials = [
   {
-    quote:
-      "Radiator.com stands by its lifetime warranty. We've sourced cooling parts from them for nine years across our 14-bay shop and the consistency is unreal.",
-    author: "Denis P.",
-    role: "Shop Owner — Austin, TX",
-    rating: 5,
+    quote: "1-800 Radiator is the only place we get cooling assemblies, radiators, AC condensers, & fan assemblies. AMAZING customer service, spot on shipping, and NEVER the wrong part. 100% recommend them for your cooling needs.",
+    author: "Bryan M.", role: "Verified Customer", rating: 5,
   },
   {
-    quote:
-      "Same-day pickup actually means same-day. Our parts manager calls in the morning and the unit is on our counter by lunch. Game changer for fleet work.",
-    author: "Marcus L.",
-    role: "Fleet Supervisor — Phoenix, AZ",
-    rating: 5,
+    quote: "1-800 Radiator came two hours after I ordered it and the price was better than everyone else who had the part 3 days away.",
+    author: "Anthony M.", role: "Verified Customer", rating: 5,
   },
   {
-    quote:
-      "First-time fit is the real headline. We've stopped second-guessing OE numbers — the catalog data is just right.",
-    author: "Yuki R.",
-    role: "Lead Tech — Seattle, WA",
-    rating: 5,
+    quote: "1-800 Radiator is a good choice. I use them all the time, always a direct fit. Some aftermarket parts from the store only \"almost\" fit.",
+    author: "George H.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Radiator.com stands by its lifetime warranty. Business Week online magazine recently had a write up on a Texas franchise that is doing excellent and expanding.",
+    author: "Denis P.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "YAY for 1-800 Radiator! I called yesterday at 5:45 PM and they promised a brand spankin' new radiator on my doorstep by noon today. They knocked at my door at 11:53 AM with a smile. It was $20 cheaper than AutoZone or PepBoys.",
+    author: "Nicole D.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Good prices; fast, free delivery. The people who answer the phone are knowledgeable and courteous.",
+    author: "David V.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Extremely reliable service with good customer service — highly recommend.",
+    author: "Willem L.", role: "Verified Customer", rating: 5,
+  },
+  {
+    quote: "Wow.. called on a Saturday. Had delivery in less than an hour. Forget the parts stores. Buy from here. Even has a candy surprise.",
+    author: "K K.", role: "Verified Customer", rating: 5,
   },
 ];
 
