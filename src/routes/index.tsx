@@ -57,17 +57,17 @@ const advantages = [
 ];
 
 const partners = [
-  "Pacific Best Inc",
-  "Behr / Hella",
-  "Cryomax",
-  "Koyo",
-  "CSF Cooling",
-  "CRS Cooling",
-  "Lynol Cooling",
-  "RadCool",
-  "Delphi Automotive",
-  "APDI",
-  "Nissens",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-pbi.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-behr.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-cryomax.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-koyo.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-csf.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-crs.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-lynol.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-radcool.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-delphi.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-apdi.png",
+  "https://www.radiator.com/Content/images/vendor-logo/logo-nissens.png",
 ];
 
 const makes = [
@@ -416,9 +416,7 @@ function Index() {
           <div className="text-center text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-8">Our Partners</div>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...partners, ...partners].map((p, i) => (
-              <span key={i} className="text-zinc-400 hover:text-brand transition-colors font-semibold tracking-widest text-xl px-12">
-                {p}
-              </span>
+              <img key={i} src={p} alt="Partner Logo" className="text-zinc-400 hover:text-brand transition-colors font-semibold tracking-widest text-xl px-12" />
             ))}
           </div>
         </div>
