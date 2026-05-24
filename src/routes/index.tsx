@@ -453,7 +453,14 @@ function Index() {
                 <span className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Stay In The Loop</span>
                 <h2 className="text-3xl md:text-4xl font-semibold text-zinc-100 tracking-tight mb-3 max-w-[24ch]">Get the right part, the first time.</h2>
                 <p className="text-zinc-400 mb-8 max-w-[48ch]">Promotions, new SKUs, and fitment alerts for the makes you service. No spam — just signal.</p>
-                <form className="flex flex-col sm:flex-row gap-3 max-w-lg" onSubmit={(e) => e.preventDefault()}>
+                <form className="flex flex-col gap-3 max-w-lg" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    aria-label="Full name"
+                    className="h-12 bg-zinc-950 border border-zinc-800 rounded px-4 text-zinc-100 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
+                  />
+                  <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
                     placeholder="your@email.com"
@@ -461,8 +468,9 @@ function Index() {
                     className="flex-1 h-12 bg-zinc-950 border border-zinc-800 rounded px-4 text-zinc-100 outline-none focus:ring-1 focus:ring-brand focus:border-brand transition"
                   />
                   <button className="h-12 px-8 bg-brand text-white text-sm font-semibold rounded hover:brightness-110 transition-all">
-                    SUBSCRIBE
+                    SIGN UP
                   </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -475,26 +483,27 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
             <div className="col-span-2">
-              <div className="text-zinc-100 font-semibold tracking-tighter text-xl mb-6 flex items-center gap-2">
-                <span className="size-2 bg-brand rounded-full" />
-                RADIATOR<span className="text-brand">.COM</span>
-              </div>
+              <img src={logoWhite} alt="Radiator.com" className="h-10 w-auto mb-6" />
               <p className="text-zinc-500 text-sm max-w-[34ch] mb-6">
                 The leading nationwide source for radiators, A/C parts, and engine cooling — trusted by 150,000 auto shops since 1982.
               </p>
+              <a href="tel:18004064738" className="text-zinc-100 font-semibold text-lg hover:text-brand transition-colors block mb-6">1-800-406-4738</a>
               <div className="flex gap-3">
-                {["TW", "FB", "IG", "YT"].map((s) => (
-                  <a key={s} href="#" className="size-9 bg-zinc-800 hover:bg-brand hover:text-zinc-950 text-zinc-400 rounded flex items-center justify-center text-[10px] font-bold tracking-wider transition-colors">
+                {[
+                  { l: "TW", href: "https://twitter.com/1_800Radiator" },
+                  { l: "FB", href: "https://www.facebook.com/1800radiator" },
+                ].map((s) => (
+                  <a key={s.l} href={s.href} target="_blank" rel="noreferrer" className="size-9 bg-zinc-800 hover:bg-brand hover:text-white text-zinc-300 rounded flex items-center justify-center text-[10px] font-bold tracking-wider transition-colors">
                     {s}
                   </a>
                 ))}
               </div>
             </div>
             {[
-              { h: "Products", l: ["Radiators", "Condensers", "Cooling Fans", "A/C Kits", "Heaters", "Fuel Tanks"] },
-              { h: "Support", l: ["Track Order", "Warranty Policy", "Returns", "Shipping", "Contact"] },
-              { h: "Company", l: ["Locations", "About Us", "Dealer Portal", "Careers", "Blog"] },
-              { h: "Resources", l: ["Fitment Guide", "Install Videos", "Wholesale", "Industries", "Newsroom"] },
+              { h: "Shop", l: ["Radiators", "Condensers", "Cooling Fans", "A/C Kits", "Heaters", "Fuel Tanks"] },
+              { h: "Support", l: ["Contact Us", "Web Accessibility", "Site Map", "Privacy"] },
+              { h: "Company", l: ["Locations", "Blog", "Driven Brands"] },
+              { h: "Legal", l: ["Privacy", "Do Not Sell My Info", "California Privacy Policy"] },
             ].map((col) => (
               <div key={col.h}>
                 <h5 className="text-zinc-100 text-xs font-bold uppercase tracking-widest mb-6">{col.h}</h5>
